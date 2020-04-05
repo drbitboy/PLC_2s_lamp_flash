@@ -2,7 +2,7 @@
 
 ### Results
 
-Standard deviations for all methods are less than a ms (per a calibrated eyeball estimate); largest deviations from the mean are around 2ms.
+Standard deviations for all methods are less than a ms (calibrated-eyeball estimate); largest deviations from the mean are around 2ms.
 
 ## TL;DR
 
