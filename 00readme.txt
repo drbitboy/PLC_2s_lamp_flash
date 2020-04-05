@@ -22,4 +22,4 @@ Caveats
 
 ### Free-running clock, using Bit 14 of a counter with a period of 100us, so the nominal flash time is 1.6384s
 
-![](https://github.com/drbitboy/PLC_2s_lamp_flash/raw/master/doc/img/rtc_bit_1.png)
+![](https://github.com/drbitboy/PLC_2s_lamp_flash/raw/master/doc/img/free_running_clock_bit_14.png)
