@@ -1,10 +1,12 @@
 ## Evaluating the performance of different methods of implementing a flashing lamp.
 
-Cf. [https://www.plctalk.net/qanda/showthread.php?t=124383](https://www.plctalk.net/qanda/showthread.php?t=124383)
-
 ### Results
 
 Standard deviations for all methods are less than a ms (per a calibrated eyeball estimate); largest deviations from the mean are around 2ms.
+
+## TL;DR
+
+Cf. [https://www.plctalk.net/qanda/showthread.php?t=124383](https://www.plctalk.net/qanda/showthread.php?t=124383)
 
 ### Caveats
 
