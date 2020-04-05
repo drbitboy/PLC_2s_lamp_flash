@@ -2,11 +2,17 @@
 
 Cf. [https://www.plctalk.net/qanda/showthread.php?t=124383](https://www.plctalk.net/qanda/showthread.php?t=124383)
 
-Caveats
+### Results
 
-* This is not Structured Text
+Standard deviations for all methods are less than a ms (per a calibrated eyeball estimate); largest deviations from the mean are around 2ms.
+
+### Caveats
+
+* This is not Structured Text, as requested in the PLCtalk.net thread.
 * The timings are in 100microsecond (100us) units, from a MicroLogix (1763-L16BBB), based on it's free running clock.
-* I am most interested in the variation wrt the mean, not the mean itself; the timer-based result means can be tweaked by adjusting the .PREset values and/or modifying other pieces of the implementation
+* I am most interested in the variation wrt the mean, not the mean itself.
+  * The timer-based result means are around 1ms above ideal (~2.001s)
+  * Those means could be tweaked by adjusting the .PREset values and/or modifying other pieces of the implementation.
 
 ### A single repeating timer, running on a cycle of approximately 4000ms, flashing when the accumulator value is greater than 1999:
 
