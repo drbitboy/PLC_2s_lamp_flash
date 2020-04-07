@@ -2,6 +2,7 @@ import re
 import os
 import sys
 import numpy
+import scipy.stats
 import matplotlib.pyplot as plt
 
 class STATS(object):
@@ -93,6 +94,14 @@ class STATS(object):
               )
     plt.show()
 
+  def anderson_darling(self):
+    dt = dict(basename=self.bn)
+    dt.update(
+      dict(zip('A2_statistic critical_values significance_level'.split()
+              ,scipy.stats.anderson(self.data,dist='norm')
+              )))
+    return dt
+
   def plotfreq(self):
     """Plot data frequency distribution"""
     plt.axvline(self.mean(),color='r',linestyle='dotted',label='Mean')
@@ -118,10 +127,17 @@ class STATS(object):
 if "__main__" == __name__:
   dt = dict()
   for arg in sys.argv[1:]:
-    if '--doplot'==arg: continue
+    if '--doplots'==arg: continue
+    if '--doad'==arg: continue
     dt[arg] = STATS(arg)
 
+  do_plots = '--doplots' in sys.argv[1:]
+  do_ad = '--doad' in sys.argv[1:]
   for fn in dt:
-    dt[fn].plotlims()
-    dt[fn].plotcumfreq()
-    dt[fn].plotfreq()
+    if do_plots:
+      dt[fn].plotlims()
+      dt[fn].plotcumfreq()
+      dt[fn].plotfreq()
+    if do_ad:
+      import pprint
+      pprint.pprint(dt[fn].anderson_darling())
